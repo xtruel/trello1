@@ -20,8 +20,8 @@
 ### Passo 2: Collega Repository Locale
 
 ```bash
-# Aggiungi remote origin (sostituisci USERNAME con il tuo username GitHub)
-git remote add origin https://github.com/USERNAME/trello1.git
+# Aggiungi remote origin
+git remote add origin https://github.com/xtruel/trello1.git
 
 # Rinomina branch principale (se necessario)
 git branch -M main
@@ -41,7 +41,7 @@ git push -u origin main
    - Folder: **/ (root)**
 5. Clicca "Save"
 6. Attendi 2-5 minuti per il deploy
-7. La tua app sarà disponibile su: `https://USERNAME.github.io/trello1/`
+7. La tua app sarà disponibile su: `https://xtruel.github.io/trello1/`
 
 ### Passo 4: Verifica Deploy Automatico
 
@@ -59,7 +59,7 @@ git push -u origin main
 3. Compila i dettagli:
    - **Name**: Sistema Trello Personalizzato
    - **Workspace**: Seleziona il tuo workspace
-   - **Iframe connector URL**: `https://USERNAME.github.io/trello1/trello-connector.html`
+   - **Iframe connector URL**: `https://xtruel.github.io/trello1/trello-connector.html`
    - **Author**: Il tuo nome
 
 #### Crea File Connector

@@ -6,7 +6,7 @@ Sistema di gestione trattative e ordini personalizzato basato su Trello, svilupp
 
 ## 🚀 Demo Live
 
-**[Visualizza Demo](https://tuonome.github.io/trello1/)**
+**[Visualizza Demo](https://xtruel.github.io/trello1/)**
 
 ## ✨ Funzionalità Principali
 
@@ -50,7 +50,7 @@ Sistema di gestione trattative e ordini personalizzato basato su Trello, svilupp
 
 ### Opzione 1: Clone Repository
 ```bash
-git clone https://github.com/tuonome/trello1.git
+git clone https://github.com/xtruel/trello1.git
 cd trello1
 ```
 
@@ -185,7 +185,7 @@ const WORKBOOK_ID = 'your-workbook-id';
 2. Vai in Settings → Pages
 3. Seleziona "Deploy from a branch"
 4. Scegli "main" branch
-5. La tua app sarà disponibile su `https://tuonome.github.io/trello1/`
+5. La tua app sarà disponibile su `https://xtruel.github.io/trello1/`
 
 ### Deploy Manuale
 ```bash
@@ -223,10 +223,10 @@ Distribuito sotto licenza MIT. Vedi `LICENSE` per maggiori informazioni.
 
 ## 👨‍💻 Autore
 
-**Il Tuo Nome**
-- GitHub: [@tuonome](https://github.com/tuonome)
-- Email: tua.email@example.com
-- LinkedIn: [Il Tuo Profilo](https://linkedin.com/in/tuonome)
+**xtruel**
+- GitHub: [@xtruel](https://github.com/xtruel)
+- Repository: [trello1](https://github.com/xtruel/trello1)
+- Demo Live: [https://xtruel.github.io/trello1/](https://xtruel.github.io/trello1/)
 
 ## 🙏 Ringraziamenti
 
