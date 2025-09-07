@@ -417,8 +417,11 @@ class TrelloSystem {
     }
 
     populateWithSampleData() {
-        // Check if we already have data
-        if (Object.keys(this.cards).length > 0) return;
+        // Force populate with sample data for demonstration
+        // Clear existing data to show examples
+        this.cards = {};
+        localStorage.removeItem('trelloCards');
+        localStorage.removeItem('excelData');
 
         const sampleCards = [
             {
@@ -507,6 +510,88 @@ class TrelloSystem {
                 board: 'trattative',
                 createdAt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString(),
                 updatedAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).toISOString()
+            },
+            {
+                id: 'sample_6',
+                clientName: 'Francesca Blu',
+                clientCompany: 'Blu Hotels Chain',
+                clientPhone: '+39 055 4444444',
+                clientEmail: 'f.blu@bluhotels.com',
+                dealValue: 180000,
+                dealDescription: 'Sistema di automazione completo per 5 hotel della catena',
+                dealPriority: 'critica',
+                comments: 'Progetto strategico. Scadenza contratto: fine trimestre. Cliente premium.',
+                listId: 'obj-grandi-clienti',
+                board: 'obiettivi',
+                createdAt: new Date(Date.now() - 8 * 24 * 60 * 60 * 1000).toISOString(),
+                updatedAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).toISOString()
+            },
+            {
+                id: 'sample_7',
+                clientName: 'Roberto Gialli',
+                clientCompany: 'Gialli Trasporti SpA',
+                clientPhone: '+39 010 6666666',
+                clientEmail: 'r.gialli@giallitrasporti.it',
+                dealValue: 95000,
+                dealDescription: 'Sistema GPS e telemetria per flotta di 50 veicoli',
+                dealPriority: 'alta',
+                comments: 'Contratto firmato! Inizio lavori programmato per lunedì prossimo.',
+                listId: 'ord-confermati',
+                board: 'ordini',
+                createdAt: new Date(Date.now() - 4 * 24 * 60 * 60 * 1000).toISOString(),
+                updatedAt: new Date().toISOString(),
+                checklist: [
+                    { id: 1, text: 'Contratto firmato', completed: true },
+                    { id: 2, text: 'Pagamento acconto ricevuto', completed: true },
+                    { id: 3, text: 'Pianificazione installazioni', completed: false },
+                    { id: 4, text: 'Ordine dispositivi GPS', completed: false },
+                    { id: 5, text: 'Configurazione software', completed: false }
+                ]
+            },
+            {
+                id: 'sample_8',
+                clientName: 'Silvia Verde',
+                clientCompany: 'Verde Energia Rinnovabile',
+                clientPhone: '+39 06 8888888',
+                clientEmail: 's.verde@verdeenergia.com',
+                dealValue: 67000,
+                dealDescription: 'Sistema di monitoraggio per impianto fotovoltaico industriale',
+                dealPriority: 'media',
+                comments: 'Cliente interessato ma vuole vedere demo del sistema prima di decidere.',
+                listId: 'tra-napoli',
+                board: 'trattative',
+                createdAt: new Date(Date.now() - 6 * 24 * 60 * 60 * 1000).toISOString(),
+                updatedAt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString()
+            },
+            {
+                id: 'sample_9',
+                clientName: 'Alessandro Viola',
+                clientCompany: 'Viola Meccanica Precisione',
+                clientPhone: '+39 011 9999999',
+                clientEmail: 'a.viola@violameccanica.it',
+                dealValue: 125000,
+                dealDescription: 'Retrofit completo macchinari industriali con IoT',
+                dealPriority: 'alta',
+                comments: 'Progetto complesso ma molto redditizio. Cliente fidato da 10 anni.',
+                listId: 'obj-milano',
+                board: 'obiettivi',
+                createdAt: new Date(Date.now() - 9 * 24 * 60 * 60 * 1000).toISOString(),
+                updatedAt: new Date(Date.now() - 4 * 24 * 60 * 60 * 1000).toISOString()
+            },
+            {
+                id: 'sample_10',
+                clientName: 'Carla Rosa',
+                clientCompany: 'Rosa Fashion Group',
+                clientPhone: '+39 02 1111111',
+                clientEmail: 'c.rosa@rosafashion.com',
+                dealValue: 28000,
+                dealDescription: 'Sistema antitaccheggio per 3 negozi',
+                dealPriority: 'bassa',
+                comments: 'Piccolo ordine ma cliente con potenziale di crescita. Trattare con cura.',
+                listId: 'tra-pmi',
+                board: 'trattative',
+                createdAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).toISOString(),
+                updatedAt: new Date().toISOString()
             }
         ];
 
