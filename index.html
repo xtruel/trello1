@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Trello Personalizzato</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Sistema Gestione Trattative e Ordini</h1>
+        <div class="board-tabs">
+            <button class="tab-button active" data-board="obiettivi">OBIETTIVI</button>
+            <button class="tab-button" data-board="trattative">TRATTATIVE ATTIVE</button>
+            <button class="tab-button" data-board="ordini">ORDINI</button>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <!-- BACHECA OBIETTIVI -->
+        <div id="obiettivi" class="board active">
+            <div class="board-header">
+                <h2>OBIETTIVI - Trattative Importanti</h2>
+                <button class="add-list-btn" data-board="obiettivi">+ Aggiungi Lista</button>
+            </div>
+            <div class="lists-container">
+                <div class="list" data-list-id="obj-milano">
+                    <div class="list-header">
+                        <h3>Milano</h3>
+                        <button class="add-card-btn">+ Aggiungi Scheda</button>
+                    </div>
+                    <div class="cards-container"></div>
+                </div>
+                <div class="list" data-list-id="obj-roma">
+                    <div class="list-header">
+                        <h3>Roma</h3>
+                        <button class="add-card-btn">+ Aggiungi Scheda</button>
+                    </div>
+                    <div class="cards-container"></div>
+                </div>
+                <div class="list" data-list-id="obj-grandi-clienti">
+                    <div class="list-header">
+                        <h3>Grandi Clienti</h3>
+                        <button class="add-card-btn">+ Aggiungi Scheda</button>
+                    </div>
+                    <div class="cards-container"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BACHECA TRATTATIVE ATTIVE -->
+        <div id="trattative" class="board">
+            <div class="board-header">
+                <h2>TRATTATIVE ATTIVE</h2>
+                <button class="add-list-btn" data-board="trattative">+ Aggiungi Lista</button>
+            </div>
+            <div class="lists-container">
+                <div class="list" data-list-id="tra-napoli">
+                    <div class="list-header">
+                        <h3>Napoli</h3>
+                        <button class="add-card-btn">+ Aggiungi Scheda</button>
+                    </div>
+                    <div class="cards-container"></div>
+                </div>
+                <div class="list" data-list-id="tra-torino">
+                    <div class="list-header">
+                        <h3>Torino</h3>
+                        <button class="add-card-btn">+ Aggiungi Scheda</button>
+                    </div>
+                    <div class="cards-container"></div>
+                </div>
+                <div class="list" data-list-id="tra-pmi">
+                    <div class="list-header">
+                        <h3>PMI</h3>
+                        <button class="add-card-btn">+ Aggiungi Scheda</button>
+                    </div>
+                    <div class="cards-container"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BACHECA ORDINI -->
+        <div id="ordini" class="board">
+            <div class="board-header">
+                <h2>ORDINI</h2>
+                <button class="add-list-btn" data-board="ordini">+ Aggiungi Lista</button>
+            </div>
+            <div class="lists-container">
+                <div class="list" data-list-id="ord-in-lavorazione">
+                    <div class="list-header">
+                        <h3>In Lavorazione</h3>
+                        <button class="add-card-btn">+ Aggiungi Scheda</button>
+                    </div>
+                    <div class="cards-container"></div>
+                </div>
+                <div class="list" data-list-id="ord-produzione">
+                    <div class="list-header">
+                        <h3>Produzione</h3>
+                        <button class="add-card-btn">+ Aggiungi Scheda</button>
+                    </div>
+                    <div class="cards-container"></div>
+                </div>
+                <div class="list" data-list-id="ord-consegna">
+                    <div class="list-header">
+                        <h3>Consegna</h3>
+                        <button class="add-card-btn">+ Aggiungi Scheda</button>
+                    </div>
+                    <div class="cards-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal per creare/modificare schede -->
+    <div id="cardModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="modalTitle">Nuova Scheda Cliente</h3>
+            <form id="cardForm">
+                <div class="form-group">
+                    <label for="clientName">Nome Cliente:</label>
+                    <input type="text" id="clientName" required>
+                </div>
+                <div class="form-group">
+                    <label for="clientCompany">Azienda:</label>
+                    <input type="text" id="clientCompany">
+                </div>
+                <div class="form-group">
+                    <label for="clientPhone">Telefono:</label>
+                    <input type="tel" id="clientPhone">
+                </div>
+                <div class="form-group">
+                    <label for="clientEmail">Email:</label>
+                    <input type="email" id="clientEmail">
+                </div>
+                <div class="form-group">
+                    <label for="dealValue">Valore Trattativa (€):</label>
+                    <input type="number" id="dealValue" step="0.01">
+                </div>
+                <div class="form-group">
+                    <label for="dealDescription">Descrizione Trattativa:</label>
+                    <textarea id="dealDescription" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="dealPriority">Priorità:</label>
+                    <select id="dealPriority">
+                        <option value="bassa">Bassa</option>
+                        <option value="media">Media</option>
+                        <option value="alta">Alta</option>
+                        <option value="critica">Critica</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="comments">Commenti/Avvenimenti:</label>
+                    <textarea id="comments" rows="4" placeholder="Inserisci qui gli avvenimenti e le note..."></textarea>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit">Salva</button>
+                    <button type="button" id="cancelBtn">Annulla</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
